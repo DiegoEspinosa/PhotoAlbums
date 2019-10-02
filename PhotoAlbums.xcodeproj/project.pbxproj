@@ -23,7 +23,7 @@
 		C578D43D2343F996007C64CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C578D43F2343F997007C64CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C578D4422343F997007C64CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C578D4442343F997007C64CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C578D4442343F997007C64CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,55 @@
 		C578D4352343F996007C64CA /* PhotoAlbums */ = {
 			isa = PBXGroup;
 			children = (
-				C578D4362343F996007C64CA /* AppDelegate.swift */,
-				C578D4382343F996007C64CA /* SceneDelegate.swift */,
-				C578D43A2343F996007C64CA /* ViewController.swift */,
-				C578D43C2343F996007C64CA /* Main.storyboard */,
-				C578D43F2343F997007C64CA /* Assets.xcassets */,
-				C578D4412343F997007C64CA /* LaunchScreen.storyboard */,
-				C578D4442343F997007C64CA /* Info.plist */,
+				C578D44A2343FA12007C64CA /* Model */,
+				C578D44B2343FA1E007C64CA /* View */,
+				C578D44C2343FA2D007C64CA /* Controller */,
+				C578D44D2343FA35007C64CA /* Services */,
+				C578D44E2343FA3D007C64CA /* Supporting Files */,
 			);
 			path = PhotoAlbums;
+			sourceTree = "<group>";
+		};
+		C578D44A2343FA12007C64CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C578D44B2343FA1E007C64CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C578D43C2343F996007C64CA /* Main.storyboard */,
+				C578D4412343F997007C64CA /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C578D44C2343FA2D007C64CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C578D43A2343F996007C64CA /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C578D44D2343FA35007C64CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C578D44E2343FA3D007C64CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C578D4362343F996007C64CA /* AppDelegate.swift */,
+				C578D4382343F996007C64CA /* SceneDelegate.swift */,
+				C578D43F2343F997007C64CA /* Assets.xcassets */,
+				C578D4442343F997007C64CA /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
