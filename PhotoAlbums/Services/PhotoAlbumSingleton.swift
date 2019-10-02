@@ -47,7 +47,15 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
     }
     
     private func getNumberOfAlbumsFromJson(from photoJsonArray: [PhotoJson]) -> Int {
-        
+        var albumCount = 0
+        var currentId = -1
+        for photoJson in photoJsonArray {
+            if(photoJson.albumId != currentId) {
+                currentId = photoJson.albumId
+                albumCount += 1
+            }
+        }
+        return albumCount
     }
     
     private func createPhotosFromJson(from photoJsonArray: [PhotoJson]) -> [Photo] {
