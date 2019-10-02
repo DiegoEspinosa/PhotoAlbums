@@ -8,12 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class PhotoAlbumsCollectionViewController: UICollectionViewController {
     
     private var photoAlbums : Array<Album> = []
     private let navTitle = "Photo Albums"
+    private let reuseIdentifier = "PhotoAlbumCell"
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -71,8 +70,16 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
            }.done {
             self.activityIndicator.stopAnimating()
            }.catch { error in
-            print("error: \(error)")
-            //future implementation of alert
+            self.displayAlert()
            }
-       }
+    }
+    
+    private func displayAlert() {
+        let alert = UIAlertController(title: "Something went wrong", message: "There was a problem retrieving data. Please try again", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+        activityIndicator.stopAnimating()
+        //retry button in the view is to be displayed to allow user to retry (retry button will be hidden when the button is pressed
+    }
 }
