@@ -93,6 +93,10 @@
                     <navigationItem key="navigationItem" id="Qev-OR-XZx">
                         <barButtonItem key="backBarButtonItem" title=" " id="rso-u0-uYN"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SUR-6L-7kb" id="wwM-VQ-AHv"/>
+                        <outlet property="navItem" destination="Qev-OR-XZx" id="gxz-jQ-tOP"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUP-fU-pqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

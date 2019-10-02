@@ -11,7 +11,7 @@ import UIKit
 class PhotoAlbumsCollectionViewController: UICollectionViewController {
     
     private var photoAlbums : Array<Album> = []
-    private let navTitle = "Photo Albums"
+    private let navTitle = "Albums"
     private let reuseIdentifier = "PhotoAlbumCell"
     
     @IBOutlet weak var navItem: UINavigationItem!
