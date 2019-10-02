@@ -11,7 +11,7 @@ import Alamofire
 import PromiseKit
 
 protocol PhotoAlbumRepository {
-    //func fetchAllAlbums() -> Promise<[Album]>
+    func fetchAllAlbums() -> Promise<[Album]>
 }
 
 class PhotoAlbumSingleton: PhotoAlbumRepository {
@@ -23,17 +23,38 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
     
     private init () {}
     
-    //func fetchAllAlbums() -> Promise<[Album]> {}
+    func fetchAllAlbums() -> Promise<[Album]> {
+        return Promise { seal in
+            let url = URL(string: urlString)!
+            _ = session.request(url, method: .get).response {response in
+                if let jsonData = response.data {
+                    do {
+                        let jsonDecoder = JSONDecoder()
+                        let json = try jsonDecoder.decode([PhotoJson].self, from: jsonData)
+                        let photoArray = self.createPhotosFromJson(from: json)
+                        let albums = self.createAlbumsFromPhotos(from: photoArray)
+                        seal.fulfill(albums)
+                    } catch {
+                        print("Big Error: \(error)")
+                        seal.reject(error)
+                    }
+                }
+                if let error = response.error {
+                    seal.reject(error)
+                }
+            }
+        }
+    }
     
-    private func getNumberOfAlbumsFromJson() {
+    private func getNumberOfAlbumsFromJson(from photoJsonArray: [PhotoJson]) -> Int {
         
     }
     
-    private func createPhotosFromJson() {
+    private func createPhotosFromJson(from photoJsonArray: [PhotoJson]) -> [Photo] {
         
     }
     
-    private func createAlbumsFromPhotos() {
+    private func createAlbumsFromPhotos(from photoArray: [Photo]) -> [Album] {
         
     }
 }
