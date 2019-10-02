@@ -18,6 +18,7 @@
 		C578D4522344F09E007C64CA /* PhotoJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D4512344F09E007C64CA /* PhotoJson.swift */; };
 		C578D4552344F10D007C64CA /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D4542344F10D007C64CA /* Album.swift */; };
 		C578D4572344F1DC007C64CA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D4562344F1DC007C64CA /* Photo.swift */; };
+		C578D45923450D37007C64CA /* PhotoAlbumsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D45823450D37007C64CA /* PhotoAlbumsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C578D4512344F09E007C64CA /* PhotoJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJson.swift; sourceTree = "<group>"; };
 		C578D4542344F10D007C64CA /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		C578D4562344F1DC007C64CA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C578D45823450D37007C64CA /* PhotoAlbumsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,9 @@
 		C578D44C2343FA2D007C64CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C578D45823450D37007C64CA /* PhotoAlbumsCollectionViewController.swift */,
 				C578D43A2343F996007C64CA /* ViewController.swift */,
+				C578D45A23450D56007C64CA /* Cells */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +153,13 @@
 				C578D4512344F09E007C64CA /* PhotoJson.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		C578D45A23450D56007C64CA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				C578D4372343F996007C64CA /* AppDelegate.swift in Sources */,
 				C578D4502344EB8E007C64CA /* PhotoAlbumSingleton.swift in Sources */,
 				C578D4522344F09E007C64CA /* PhotoJson.swift in Sources */,
+				C578D45923450D37007C64CA /* PhotoAlbumsCollectionViewController.swift in Sources */,
 				C578D4392343F996007C64CA /* SceneDelegate.swift in Sources */,
 				C578D4552344F10D007C64CA /* Album.swift in Sources */,
 			);
