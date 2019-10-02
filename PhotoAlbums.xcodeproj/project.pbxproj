@@ -14,6 +14,7 @@
 		C578D43E2343F996007C64CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C578D43C2343F996007C64CA /* Main.storyboard */; };
 		C578D4402343F997007C64CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C578D43F2343F997007C64CA /* Assets.xcassets */; };
 		C578D4432343F997007C64CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C578D4412343F997007C64CA /* LaunchScreen.storyboard */; };
+		C578D4502344EB8E007C64CA /* PhotoAlbumSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D44F2344EB8E007C64CA /* PhotoAlbumSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C578D43F2343F997007C64CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C578D4422343F997007C64CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C578D4442343F997007C64CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		C578D44F2344EB8E007C64CA /* PhotoAlbumSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				B75E885B4224EC984FB683C9 /* Pods-PhotoAlbums.debug.xcconfig */,
 				3A6215E5FB5141B6A3CB2AE8 /* Pods-PhotoAlbums.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,6 +118,7 @@
 		C578D44D2343FA35007C64CA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C578D44F2344EB8E007C64CA /* PhotoAlbumSingleton.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +258,7 @@
 			files = (
 				C578D43B2343F996007C64CA /* ViewController.swift in Sources */,
 				C578D4372343F996007C64CA /* AppDelegate.swift in Sources */,
+				C578D4502344EB8E007C64CA /* PhotoAlbumSingleton.swift in Sources */,
 				C578D4392343F996007C64CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
