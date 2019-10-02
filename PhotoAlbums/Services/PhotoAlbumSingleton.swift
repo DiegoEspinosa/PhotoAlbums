@@ -61,10 +61,10 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
     
     private func getNumberOfAlbumsFromAllPhotos(from photoArray: [Photo]) -> Int {
         var albumCount = 0
-        var currentId = -1
+        var currentAlbumId = -1
         for photo in photoArray {
-            if(photo.albumId != currentId) {
-                currentId = photo.albumId
+            if(photo.albumId != currentAlbumId) {
+                currentAlbumId = photo.albumId
                 albumCount += 1
             }
         }
