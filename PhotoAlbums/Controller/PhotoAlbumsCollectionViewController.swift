@@ -21,7 +21,7 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(UINib(nibName: "PhotoAlbumsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
         navItem.title = navTitle
@@ -40,10 +40,10 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoAlbumsCollectionViewCell
+        let album = photoAlbums[indexPath.row]
+        cell.albumImageView.downloadImage(from: album.albumPhotos[0].thumbnailUrl)
+        cell.albumIdLabel.text = String(album.albumId)
         return cell
     }
 
