@@ -12,16 +12,21 @@ private let reuseIdentifier = "Cell"
 
 class PhotoAlbumsCollectionViewController: UICollectionViewController {
     
+    private var photoAlbums : Array<Album> = []
+    private let navTitle = "Photo Albums"
+    
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        navItem.title = navTitle
+        loadInAllAlbums()
     }
 
     // MARK: - UICollectionViewDataSource
@@ -58,5 +63,16 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Private Functions
-    
+    private func loadInAllAlbums() {
+        activityIndicator.startAnimating()
+           PhotoAlbumSingleton.shared.fetchAllAlbums().map { albums in
+            self.photoAlbums = albums
+            self.collectionView.reloadData()
+           }.done {
+            self.activityIndicator.stopAnimating()
+           }.catch { error in
+            print("error: \(error)")
+            //future implementation of alert
+           }
+       }
 }

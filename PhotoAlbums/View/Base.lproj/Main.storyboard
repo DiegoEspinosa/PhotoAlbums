@@ -42,6 +42,10 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="4M4-Ar-pDX"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="6uj-z2-W8U" id="3M1-0a-mkF"/>
+                        <outlet property="navItem" destination="4M4-Ar-pDX" id="Hcs-ZG-DKh"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzk-Gi-8go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
