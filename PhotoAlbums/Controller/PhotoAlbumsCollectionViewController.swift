@@ -51,13 +51,17 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //perform segue
+        performSegue(withIdentifier: "toAlbumView", sender: self.collectionView.cellForItem(at: indexPath))
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //prepare data
+        if segue.identifier == "toAlbumView" {
+            guard let photoAlbumVC = segue.destination as? AlbumPhotosCollectionViewController else {fatalError("Error setting collection view controller")}
+            guard let selectedCell = sender as? PhotoAlbumsCollectionViewCell else {fatalError("Error setting cell")}
+            guard let indexPath = collectionView.indexPath(for: selectedCell) else {fatalError("Error getting indexPath")}
+            photoAlbumVC.selectedAlbum = photoAlbums[indexPath.row]
+        }
     }
     
     // MARK: - Private Functions
@@ -83,8 +87,11 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
     }
     
     private func roundCorners(_ cell: PhotoAlbumsCollectionViewCell) {
+        //Round Label Corners
         cell.albumIdLabel.layer.cornerRadius = 10
         cell.albumIdLabel.layer.masksToBounds = true
+        
+        //Cell Label Corners
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
     }

@@ -28,13 +28,16 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoAlbumCell" id="fYT-1e-Q3L">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoAlbumCell" id="fYT-1e-Q3L" customClass="PhotoAlbumsCollectionViewCell" customModule="PhotoAlbums" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GZ3-um-Nie">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <segue destination="AE7-V0-Qvv" kind="show" identifier="toAlbumView" id="jOM-ro-beg"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -42,7 +45,9 @@
                             <outlet property="delegate" destination="eEr-fu-YUw" id="VzP-Yx-39A"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="4M4-Ar-pDX"/>
+                    <navigationItem key="navigationItem" id="4M4-Ar-pDX">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QE3-fQ-mqX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="6uj-z2-W8U" id="3M1-0a-mkF"/>
                         <outlet property="navItem" destination="4M4-Ar-pDX" id="Hcs-ZG-DKh"/>
@@ -52,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="567.20000000000005" y="216.34182908545728"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Album Photos Collection View Controller-->
         <scene sceneID="RUw-Rs-Qmr">
             <objects>
-                <collectionViewController id="AE7-V0-Qvv" sceneMemberID="viewController">
+                <collectionViewController id="AE7-V0-Qvv" customClass="AlbumPhotosCollectionViewController" customModule="PhotoAlbums" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eyy-U1-dKT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +72,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="SUR-6L-7kb">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <cells>
@@ -85,6 +90,9 @@
                             <outlet property="delegate" destination="AE7-V0-Qvv" id="kjq-Pf-LRq"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="Qev-OR-XZx">
+                        <barButtonItem key="backBarButtonItem" title=" " id="rso-u0-uYN"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUP-fU-pqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

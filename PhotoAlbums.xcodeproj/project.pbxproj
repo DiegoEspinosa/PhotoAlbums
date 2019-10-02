@@ -22,6 +22,7 @@
 		C578D46323452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D46123452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift */; };
 		C578D46423452D82007C64CA /* PhotoAlbumsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C578D46223452D82007C64CA /* PhotoAlbumsCollectionViewCell.xib */; };
 		C578D466234530D9007C64CA /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */; };
+		C578D46823453F42007C64CA /* AlbumPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D46723453F42007C64CA /* AlbumPhotosCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C578D46123452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C578D46223452D82007C64CA /* PhotoAlbumsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoAlbumsCollectionViewCell.xib; sourceTree = "<group>"; };
 		C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		C578D46723453F42007C64CA /* AlbumPhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotosCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C578D45823450D37007C64CA /* PhotoAlbumsCollectionViewController.swift */,
+				C578D46723453F42007C64CA /* AlbumPhotosCollectionViewController.swift */,
 				C578D43A2343F996007C64CA /* ViewController.swift */,
 				C578D45A23450D56007C64CA /* Cells */,
 			);
@@ -301,6 +304,7 @@
 				C578D466234530D9007C64CA /* UIImageView+DownloadImage.swift in Sources */,
 				C578D4522344F09E007C64CA /* PhotoJson.swift in Sources */,
 				C578D46323452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift in Sources */,
+				C578D46823453F42007C64CA /* AlbumPhotosCollectionViewController.swift in Sources */,
 				C578D45923450D37007C64CA /* PhotoAlbumsCollectionViewController.swift in Sources */,
 				C578D4392343F996007C64CA /* SceneDelegate.swift in Sources */,
 				C578D4552344F10D007C64CA /* Album.swift in Sources */,
