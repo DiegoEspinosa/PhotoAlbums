@@ -46,23 +46,28 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
         }
     }
     
-    private func getNumberOfAlbumsFromJson(from photoJsonArray: [PhotoJson]) -> Int {
-        var albumCount = 0
-        var currentId = -1
-        for photoJson in photoJsonArray {
-            if(photoJson.albumId != currentId) {
-                currentId = photoJson.albumId
-                albumCount += 1
-            }
-        }
-        return albumCount
-    }
-    
     private func createPhotosFromJson(from photoJsonArray: [PhotoJson]) -> [Photo] {
-        
+        var allPhotos : Array<Photo> = []
+        for photoJson in photoJsonArray {
+            let newPhoto = Photo(photoJson.albumId, photoJson.id, photoJson.title, photoJson.url, photoJson.thumbnailUrl)
+            allPhotos.append(newPhoto)
+        }
+        return allPhotos
     }
     
     private func createAlbumsFromPhotos(from photoArray: [Photo]) -> [Album] {
         
+    }
+    
+    private func getNumberOfAlbumsFromAllPhotos(from photoArray: [Photo]) -> Int {
+        var albumCount = 0
+        var currentId = -1
+        for photo in photoArray {
+            if(photo.albumId != currentId) {
+                currentId = photo.albumId
+                albumCount += 1
+            }
+        }
+        return albumCount
     }
 }
