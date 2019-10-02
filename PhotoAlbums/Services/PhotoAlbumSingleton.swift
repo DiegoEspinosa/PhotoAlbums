@@ -56,7 +56,20 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
     }
     
     private func createAlbumsFromPhotos(from photoArray: [Photo]) -> [Album] {
-        
+        var albums : Array<Album> = []
+        var currentAlbumId = photoArray[0].albumId
+        let maxNumAlbums = getNumberOfAlbumsFromAllPhotos(from: photoArray)
+        while(currentAlbumId <= maxNumAlbums) {
+            let newAlbum = Album(albumId: currentAlbumId)
+            for photo in photoArray {
+                if(photo.albumId == currentAlbumId) {
+                    newAlbum.albumPhotos.append(photo)
+                }
+            }
+            albums.append(newAlbum)
+            currentAlbumId += 1
+        }
+        return albums
     }
     
     private func getNumberOfAlbumsFromAllPhotos(from photoArray: [Photo]) -> Int {
