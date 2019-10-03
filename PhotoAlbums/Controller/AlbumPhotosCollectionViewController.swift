@@ -13,6 +13,8 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     public var selectedAlbum : Album?
     private let reuseIdentifier = "AlbumPhotoCell"
     private let navTitle = "Photo Album"
+    
+    private var photosArray : Array<Photo> = []
 
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -23,6 +25,8 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
         self.collectionView.register(UINib(nibName: "AlbumPhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        navItem.title = navTitle
+        loadInAlbumPhotos()
     }
 
     // MARK: - UICollectionViewDataSource
@@ -32,15 +36,14 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let photoCount = selectedAlbum?.albumPhotos.count else {fatalError("Error setting album's photo count")}
-        return photoCount
+        return photosArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
     
-        // Configure the cell
-    
+        cell.photoImageView.downloadImage(from: photosArray[indexPath.row].thumbnailUrl)
+        roundCorners(cell)
         return cell
     }
 
@@ -56,5 +59,18 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Private Functions
+    private func loadInAlbumPhotos() {
+        activityIndicator.startAnimating()
+        if let passedInAlbum = selectedAlbum  {
+            photosArray = passedInAlbum.albumPhotos
+            collectionView.reloadData()
+        }
+        activityIndicator.stopAnimating()
+    }
+    
+    private func roundCorners(_ cell: AlbumPhotosCollectionViewCell) {
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+    }
 
 }
