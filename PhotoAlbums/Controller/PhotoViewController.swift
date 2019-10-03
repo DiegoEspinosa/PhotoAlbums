@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoViewController.swift
 //  PhotoAlbums
 //
 //  Created by Diego Espinosa on 10/1/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
