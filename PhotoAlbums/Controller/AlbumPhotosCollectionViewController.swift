@@ -50,12 +50,17 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //perform segue
+        performSegue(withIdentifier: "toPhoto", sender: self.collectionView.cellForItem(at: indexPath))
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //segue prep
+        if segue.identifier == "toPhoto" {
+            guard let photoAlbumVC = segue.destination as? PhotoViewController else {fatalError("Error setting collection view controller")}
+            guard let selectedCell = sender as? AlbumPhotosCollectionViewCell else {fatalError("Error setting cell")}
+            guard let indexPath = collectionView.indexPath(for: selectedCell) else {fatalError("Error getting indexPath")}
+            photoAlbumVC.selectedPhoto = photosArray[indexPath.row]
+        }
     }
     
     // MARK: - Private Functions

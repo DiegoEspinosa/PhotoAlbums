@@ -22,7 +22,18 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navItem.title = navTitle
-        //loadInPhoto()
+        loadInPhoto()
+    }
+    
+    
+    // MARK: - Private Functions
+    private func loadInPhoto() {
+        guard let photo = selectedPhoto else {fatalError("Error setting photo")}
+        
+        activityIndicator.startAnimating()
+        photoImageView.downloadImage(from: photo.url)
+        photoTitle.text = "\(photo.title)"
+        activityIndicator.stopAnimating()
     }
 
 
