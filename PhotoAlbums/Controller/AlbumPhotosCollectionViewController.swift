@@ -43,7 +43,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
     
         cell.photoImageView.downloadImage(from: photosArray[indexPath.row].thumbnailUrl)
-        roundCorners(cell)
+        roundCellCorners(cell)
         return cell
     }
 
@@ -73,7 +73,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
         activityIndicator.stopAnimating()
     }
     
-    private func roundCorners(_ cell: AlbumPhotosCollectionViewCell) {
+    private func roundCellCorners(_ cell: AlbumPhotosCollectionViewCell) {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
     }

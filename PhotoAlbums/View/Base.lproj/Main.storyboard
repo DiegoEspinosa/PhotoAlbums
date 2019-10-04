@@ -20,7 +20,7 @@
                             <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="16"/>
+                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="16"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="6uj-z2-W8U">
                             <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
@@ -28,7 +28,7 @@
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoAlbumCell" id="fYT-1e-Q3L" customClass="PhotoAlbumsCollectionViewCell" customModule="PhotoAlbums" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="150" height="150"/>
+                                <rect key="frame" x="16" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GZ3-um-Nie">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -65,10 +65,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="8" id="1iD-hs-nWP">
-                            <size key="itemSize" width="100" height="100"/>
+                            <size key="itemSize" width="110" height="110"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="16"/>
+                            <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="16"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="SUR-6L-7kb">
                             <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
@@ -76,10 +76,10 @@
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumPhotoCell" id="Ynu-y0-sJZ" customClass="AlbumPhotosCollectionViewCell" customModule="PhotoAlbums" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="8" y="0.0" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n0p-no-Gtu">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <connections>
@@ -92,7 +92,7 @@
                             <outlet property="delegate" destination="AE7-V0-Qvv" id="kjq-Pf-LRq"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Qev-OR-XZx">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Qev-OR-XZx">
                         <barButtonItem key="backBarButtonItem" title=" " id="rso-u0-uYN"/>
                     </navigationItem>
                     <connections>
@@ -161,8 +161,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-R7-HI8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AOC-5L-tgF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="AOC-5L-tgF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

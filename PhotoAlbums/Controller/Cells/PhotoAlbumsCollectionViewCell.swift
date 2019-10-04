@@ -10,7 +10,6 @@ import UIKit
 
 class PhotoAlbumsCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var albumIdLabel: UILabel!
     @IBOutlet weak var albumImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

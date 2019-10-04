@@ -43,8 +43,7 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoAlbumsCollectionViewCell
         let album = photoAlbums[indexPath.row]
         cell.albumImageView.downloadImage(from: album.albumPhotos[0].thumbnailUrl)
-        cell.albumIdLabel.text = String(album.albumId)
-        roundCorners(cell)
+        roundCellCorners(cell)
         return cell
     }
 
@@ -86,12 +85,7 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
         //retry button in the view is to be displayed to allow user to retry (retry button will be hidden when the button is pressed
     }
     
-    private func roundCorners(_ cell: PhotoAlbumsCollectionViewCell) {
-        //Round Label Corners
-        cell.albumIdLabel.layer.cornerRadius = 10
-        cell.albumIdLabel.layer.masksToBounds = true
-        
-        //Cell Label Corners
+    private func roundCellCorners(_ cell: PhotoAlbumsCollectionViewCell) {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
     }
