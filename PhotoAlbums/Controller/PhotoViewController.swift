@@ -12,6 +12,7 @@ class PhotoViewController: UIViewController {
     
     public var selectedPhoto : Photo?
     private let navTitle = "Photo"
+    private let dispatchGroup = DispatchGroup()
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -31,9 +32,11 @@ class PhotoViewController: UIViewController {
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
         
         activityIndicator.startAnimating()
-        photoImageView.downloadImage(from: photo.url)
-        photoTitle.text = "\(photo.title)"
-        activityIndicator.stopAnimating()
+        photoImageView.downloadImage(from: photo.url, dispatchGroup: dispatchGroup)
+        dispatchGroup.notify(queue: .main) {
+            self.photoTitle.text = "\(photo.title)"
+            self.activityIndicator.stopAnimating()
+        }
     }
 
 
