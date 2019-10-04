@@ -12,7 +12,6 @@ class PhotoViewController: UIViewController {
     
     public var selectedPhoto : Photo?
     private let navTitle = "Photo"
-    private let dispatchGroup = DispatchGroup()
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -30,15 +29,12 @@ class PhotoViewController: UIViewController {
     
     // MARK: - Private Functions
     private func loadInPhoto() {
-        guard let photo = selectedPhoto else {fatalError("Error setting photo")}
-        
         activityIndicator.startAnimating()
-        photoImageView.downloadImage(from: photo.url, dispatchGroup: dispatchGroup)
-        dispatchGroup.notify(queue: .main) {
-            self.photoTitle.text = "'\(photo.title)'"
-            self.photoTitle.isHidden = false
-            self.activityIndicator.stopAnimating()
-        }
+        guard let photo = selectedPhoto else {fatalError("Error setting photo")}
+        photoImageView.downloadImage(from: photo.url)
+        self.photoTitle.text = "'\(photo.title)'"
+        self.photoTitle.isHidden = false
+        self.activityIndicator.stopAnimating()
     }
     
     @objc private func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {

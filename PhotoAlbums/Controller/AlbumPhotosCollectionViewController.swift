@@ -13,7 +13,6 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     public var selectedAlbum : Album?
     private let navTitle = "Photo Album"
     private let reuseIdentifier = "AlbumPhotoCell"
-    private let dispatchGroup = DispatchGroup()
     
     private var photosArray : Array<Photo> = []
 
@@ -43,7 +42,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
         let photo = photosArray[indexPath.row]
-        cell.photoImageView.downloadImage(from: photo.thumbnailUrl, dispatchGroup: dispatchGroup)
+        cell.photoImageView.downloadImage(from: photo.thumbnailUrl)
         roundCellCorners(cell)
         return cell
     }
@@ -70,9 +69,6 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
             activityIndicator.startAnimating()
             photosArray = passedInAlbum.albumPhotos
             collectionView.reloadData()
-            dispatchGroup.notify(queue: .main) {
-                self.activityIndicator.stopAnimating()
-            }
         }
     }
     
