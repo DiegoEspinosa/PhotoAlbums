@@ -18,13 +18,13 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Register cell classes
         self.collectionView.register(UINib(nibName: "AlbumPhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
         navItem.title = navTitle
         loadInAlbumPhotos()
     }

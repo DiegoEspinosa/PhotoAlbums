@@ -23,7 +23,6 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView.register(UINib(nibName: "PhotoAlbumsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
         navItem.title = navTitle
         loadInAllAlbums()
     }
@@ -78,11 +77,15 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
     
     private func displayAlert() {
         let alert = UIAlertController(title: "Something went wrong", message: "There was a problem retrieving data. Please try again", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+            self.loadInAllAlbums()
+        }
         alert.addAction(okAction)
+        alert.addAction(retryAction)
         self.present(alert, animated: true, completion: nil)
         activityIndicator.stopAnimating()
-        //retry button in the view is to be displayed to allow user to retry (retry button will be hidden when the button is pressed
     }
     
     private func roundCellCorners(_ cell: PhotoAlbumsCollectionViewCell) {
