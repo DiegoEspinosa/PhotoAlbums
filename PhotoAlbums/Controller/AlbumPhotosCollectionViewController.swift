@@ -11,8 +11,8 @@ import UIKit
 class AlbumPhotosCollectionViewController: UICollectionViewController {
     
     public var selectedAlbum : Album?
-    private let reuseIdentifier = "AlbumPhotoCell"
     private let navTitle = "Photo Album"
+    private let reuseIdentifier = "AlbumPhotoCell"
     
     private var photosArray : Array<Photo> = []
 
