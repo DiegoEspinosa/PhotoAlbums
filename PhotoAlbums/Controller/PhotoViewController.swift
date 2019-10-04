@@ -23,6 +23,7 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navItem.title = navTitle
+        photoTitle.isHidden = true
         loadInPhoto()
     }
     
@@ -34,7 +35,8 @@ class PhotoViewController: UIViewController {
         activityIndicator.startAnimating()
         photoImageView.downloadImage(from: photo.url, dispatchGroup: dispatchGroup)
         dispatchGroup.notify(queue: .main) {
-            self.photoTitle.text = "\(photo.title)"
+            self.photoTitle.text = "'\(photo.title)'"
+            self.photoTitle.isHidden = false
             self.activityIndicator.stopAnimating()
         }
     }
