@@ -9,10 +9,20 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
+    
+    public var selectedPhoto : Photo?
+    private let navTitle = "Photo"
+    
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoTitle: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navItem.title = navTitle
+        //loadInPhoto()
     }
 
 
