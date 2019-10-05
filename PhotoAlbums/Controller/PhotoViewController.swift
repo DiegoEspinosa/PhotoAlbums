@@ -31,7 +31,7 @@ class PhotoViewController: UIViewController {
     // MARK: - Private Functions
     private func loadInPhoto() {
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
-        photoImageView.downloadImageFrom(urlString: photo.url, imageMode: .scaleAspectFit)
+        photoImageView.loadImageFrom(urlString: photo.url)
         self.photoTitle.text = "'\(photo.title)'"
     }
     
