@@ -26,7 +26,7 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
     func fetchAllAlbums() -> Promise<[Album]> {
         return Promise { seal in
             let url = URL(string: urlString)!
-            _ = session.request(url, method: .get).response {response in
+            session.request(url, method: .get).response {response in
                 if let jsonData = response.data {
                     do {
                         let jsonDecoder = JSONDecoder()
@@ -35,7 +35,6 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
                         let albums = self.createAlbumsFromPhotos(from: photoArray)
                         seal.fulfill(albums)
                     } catch {
-                        print("Big Error: \(error)")
                         seal.reject(error)
                     }
                 }
