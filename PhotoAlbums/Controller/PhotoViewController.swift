@@ -14,7 +14,7 @@ class PhotoViewController: UIViewController {
     private let navTitle = "Photo"
     
     @IBOutlet weak var navItem: UINavigationItem!
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoImageView: CustomImageView!
     @IBOutlet weak var photoTitle: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
@@ -31,7 +31,7 @@ class PhotoViewController: UIViewController {
     private func loadInPhoto() {
         activityIndicator.startAnimating()
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
-        photoImageView.downloadImage(from: photo.url)
+        photoImageView.downloadImageFrom(urlString: photo.url, imageMode: .scaleAspectFit)
         self.photoTitle.text = "'\(photo.title)'"
         self.photoTitle.isHidden = false
         self.activityIndicator.stopAnimating()

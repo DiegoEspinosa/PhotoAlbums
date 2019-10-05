@@ -42,7 +42,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
         let photo = photosArray[indexPath.row]
-        cell.photoImageView.downloadImage(from: photo.thumbnailUrl)
+        cell.photoImageView.downloadImageFrom(urlString: photo.thumbnailUrl, imageMode: .scaleAspectFit)
         roundCellCorners(cell)
         return cell
     }
@@ -69,6 +69,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
             activityIndicator.startAnimating()
             photosArray = passedInAlbum.albumPhotos
             collectionView.reloadData()
+            activityIndicator.stopAnimating()
         }
     }
     

@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-4c-z8D">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-6m-H9A">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-6m-H9A" customClass="CustomImageView" customModule="PhotoAlbums" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                             </imageView>
                         </subviews>
@@ -41,7 +41,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="albumImageView" destination="XEU-6m-H9A" id="AZa-eI-QST"/>
+                <outlet property="albumImageView" destination="XEU-6m-H9A" id="aca-Sl-QUT"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="153.34821428571428"/>
         </collectionViewCell>
