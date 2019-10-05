@@ -5,6 +5,9 @@
 //  Created by Diego Espinosa on 10/1/19.
 //  Copyright © 2019 Diego Espinosa. All rights reserved.
 //
+//  Found solution for imageTapped on Stackoverflow:
+//  https://stackoverflow.com/questions/34694377/swift-how-can-i-make-an-image-full-screen-when-clicked-and-then-original-size
+//
 
 import UIKit
 

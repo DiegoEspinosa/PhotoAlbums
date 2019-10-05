@@ -5,6 +5,9 @@
 //  Created by Diego Espinosa on 10/5/19.
 //  Copyright © 2019 Diego Espinosa. All rights reserved.
 //
+//  Made modifications to custom class soultion on stackoverflow:
+//  https://stackoverflow.com/questions/40873685/how-to-cache-images-using-urlsession-in-swift
+//
 
 import Foundation
 import UIKit
