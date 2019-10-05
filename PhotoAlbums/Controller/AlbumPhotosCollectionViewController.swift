@@ -43,7 +43,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
         let photo = photosArray[indexPath.row]
-        cell.photoImageView.loadImageFrom(urlString: photo.thumbnailUrl)
+        cell.photoImageView.loadImageFromString(urlString: photo.thumbnailUrl)
         roundCellCorners(cell)
         return cell
     }

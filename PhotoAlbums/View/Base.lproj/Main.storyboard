@@ -118,7 +118,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-gA-iYK" customClass="CustomImageView" customModule="PhotoAlbums" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-gA-iYK">
                                 <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -143,7 +143,7 @@
                     <navigationItem key="navigationItem" id="4LE-jS-4YJ"/>
                     <connections>
                         <outlet property="navItem" destination="4LE-jS-4YJ" id="giR-13-yZT"/>
-                        <outlet property="photoImageView" destination="oFb-gA-iYK" id="VU0-f1-4b5"/>
+                        <outlet property="photoImageView" destination="oFb-gA-iYK" id="cR0-Rb-HUc"/>
                         <outlet property="photoTitle" destination="iHf-Oe-UZj" id="sjm-ea-F2O"/>
                     </connections>
                 </viewController>

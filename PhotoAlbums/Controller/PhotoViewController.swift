@@ -17,7 +17,7 @@ class PhotoViewController: UIViewController {
     private let navTitle = "Photo"
     
     @IBOutlet weak var navItem: UINavigationItem!
-    @IBOutlet weak var photoImageView: CustomImageView!
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTitle: UILabel!
 
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class PhotoViewController: UIViewController {
     // MARK: - Private Functions
     private func loadInPhoto() {
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
-        photoImageView.loadImageFrom(urlString: photo.url)
+        photoImageView.loadImageFromString(urlString: photo.url)
         self.photoTitle.text = "'\(photo.title)'"
     }
     
