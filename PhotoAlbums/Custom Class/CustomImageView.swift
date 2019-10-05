@@ -15,8 +15,6 @@ import UIKit
 class CustomImageView: UIImageView {
     let imageCache = NSCache<NSString, UIImage>()
     
-    var imageURLString: String?
-    
     func downloadImageFrom(urlString: String, imageMode: UIView.ContentMode) {
         guard let url = URL(string: urlString) else { return }
         downloadImageFrom(url: url, imageMode: imageMode)
