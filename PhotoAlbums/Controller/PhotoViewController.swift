@@ -19,25 +19,20 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var photoImageView: CustomImageView!
     @IBOutlet weak var photoTitle: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navItem.title = navTitle
-        photoTitle.isHidden = true
         loadInPhoto()
     }
     
     
     // MARK: - Private Functions
     private func loadInPhoto() {
-        activityIndicator.startAnimating()
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
         photoImageView.downloadImageFrom(urlString: photo.url, imageMode: .scaleAspectFit)
         self.photoTitle.text = "'\(photo.title)'"
-        self.photoTitle.isHidden = false
-        self.activityIndicator.stopAnimating()
     }
     
     @objc private func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
