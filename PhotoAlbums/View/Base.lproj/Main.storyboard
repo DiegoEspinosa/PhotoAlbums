@@ -118,6 +118,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-lv-d5c">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-gA-iYK">
                                 <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <gestureRecognizers/>
@@ -133,7 +136,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="oFb-gA-iYK" firstAttribute="centerY" secondItem="TAg-wH-KEG" secondAttribute="centerY" id="1rS-JX-bpe"/>
+                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerY" secondItem="oFb-gA-iYK" secondAttribute="centerY" id="4Jb-t4-guy"/>
                             <constraint firstItem="iHf-Oe-UZj" firstAttribute="top" secondItem="oFb-gA-iYK" secondAttribute="bottom" constant="8" id="JgB-hV-dFU"/>
+                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerX" secondItem="oFb-gA-iYK" secondAttribute="centerX" id="K2H-XK-Trq"/>
                             <constraint firstItem="iHf-Oe-UZj" firstAttribute="leading" secondItem="TAg-wH-KEG" secondAttribute="leadingMargin" id="LZg-X3-fxU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iHf-Oe-UZj" secondAttribute="trailing" id="eZ0-TF-cGo"/>
                             <constraint firstItem="oFb-gA-iYK" firstAttribute="centerX" secondItem="TAg-wH-KEG" secondAttribute="centerX" id="s2g-hd-m56"/>
@@ -142,6 +147,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4LE-jS-4YJ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Z9Y-lv-d5c" id="rqd-5Y-1sY"/>
                         <outlet property="navItem" destination="4LE-jS-4YJ" id="giR-13-yZT"/>
                         <outlet property="photoImageView" destination="oFb-gA-iYK" id="cR0-Rb-HUc"/>
                         <outlet property="photoTitle" destination="iHf-Oe-UZj" id="sjm-ea-F2O"/>

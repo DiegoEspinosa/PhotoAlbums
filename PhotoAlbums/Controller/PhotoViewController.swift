@@ -19,7 +19,8 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTitle: UILabel!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,9 +31,12 @@ class PhotoViewController: UIViewController {
     
     // MARK: - Private Functions
     private func loadInPhoto() {
+        activityIndicator.startAnimating()
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
-        photoImageView.loadImageFromString(urlString: photo.url)
-        self.photoTitle.text = "'\(photo.title)'"
+        self.photoImageView.loadImageFromString(urlString: photo.url) {
+            self.activityIndicator.stopAnimating()
+            self.photoTitle.text = "'\(photo.title)'"
+        }
     }
     
     @objc private func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
