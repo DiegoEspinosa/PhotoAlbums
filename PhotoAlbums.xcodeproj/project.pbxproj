@@ -81,6 +81,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C54132942348EB9600D64EEF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C578D42A2343F996007C64CA = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +114,7 @@
 				C578D44B2343FA1E007C64CA /* View */,
 				C578D44C2343FA2D007C64CA /* Controller */,
 				C578D44D2343FA35007C64CA /* Services */,
+				C54132942348EB9600D64EEF /* Extensions */,
 				C578D44E2343FA3D007C64CA /* Supporting Files */,
 			);
 			path = PhotoAlbums;
@@ -117,7 +126,6 @@
 				C578D4542344F10D007C64CA /* Album.swift */,
 				C578D4562344F1DC007C64CA /* Photo.swift */,
 				C578D4532344F0A7007C64CA /* JSON */,
-				C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
