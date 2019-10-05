@@ -44,7 +44,10 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
         let photo = photosArray[indexPath.row]
         cell.photoImageView.loadImageFromString(urlString: photo.thumbnailUrl)
-        roundCellCorners(cell)
+        
+        //round cell corners
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         return cell
     }
 
@@ -69,8 +72,9 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
         if let passedInAlbum = selectedAlbum {
             activityIndicator.startAnimating()
             dispatchGroup.enter()
-            photosArray = passedInAlbum.albumPhotos
-            collectionView.performBatchUpdates(nil) { (result) in
+            DispatchQueue.main.async {
+                self.photosArray = passedInAlbum.albumPhotos
+                self.collectionView.reloadData()
                 self.dispatchGroup.leave()
             }
             dispatchGroup.notify(queue: .main, execute: {
@@ -78,10 +82,4 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
             })
         }
     }
-    
-    private func roundCellCorners(_ cell: AlbumPhotosCollectionViewCell) {
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-    }
-
 }
