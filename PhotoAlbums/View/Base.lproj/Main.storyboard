@@ -118,9 +118,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-lv-d5c">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-gA-iYK">
                                 <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <gestureRecognizers/>
@@ -132,20 +129,29 @@
                                     <outletCollection property="gestureRecognizers" destination="cJE-rx-3a9" appends="YES" id="9Jp-0g-Pd5"/>
                                 </connections>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-lv-d5c">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerY" secondItem="TAg-wH-KEG" secondAttribute="centerY" id="1rS-JX-bpe"/>
-                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerY" secondItem="oFb-gA-iYK" secondAttribute="centerY" id="4Jb-t4-guy"/>
-                            <constraint firstItem="iHf-Oe-UZj" firstAttribute="top" secondItem="oFb-gA-iYK" secondAttribute="bottom" constant="8" id="JgB-hV-dFU"/>
-                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerX" secondItem="oFb-gA-iYK" secondAttribute="centerX" id="K2H-XK-Trq"/>
+                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerY" secondItem="TAg-wH-KEG" secondAttribute="centerY" id="FkL-Os-R7W"/>
                             <constraint firstItem="iHf-Oe-UZj" firstAttribute="leading" secondItem="TAg-wH-KEG" secondAttribute="leadingMargin" id="LZg-X3-fxU"/>
+                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerX" secondItem="TAg-wH-KEG" secondAttribute="centerX" id="Z9g-he-OcT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iHf-Oe-UZj" secondAttribute="trailing" id="eZ0-TF-cGo"/>
-                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerX" secondItem="TAg-wH-KEG" secondAttribute="centerX" id="s2g-hd-m56"/>
+                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerY" secondItem="TAg-wH-KEG" secondAttribute="centerY" id="oUZ-lA-OX4"/>
+                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerX" secondItem="TAg-wH-KEG" secondAttribute="centerX" id="tKE-O7-Ocg"/>
+                            <constraint firstItem="iHf-Oe-UZj" firstAttribute="top" secondItem="oFb-gA-iYK" secondAttribute="bottom" constant="8" id="uVj-4h-suv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IXz-Hm-hGY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4LE-jS-4YJ"/>
+                    <navigationItem key="navigationItem" id="4LE-jS-4YJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="UTf-jh-XdD">
+                            <connections>
+                                <action selector="saveImageToPhotoLibrary:" destination="7kf-OT-QWG" id="g73-Gp-Geq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Z9Y-lv-d5c" id="rqd-5Y-1sY"/>
                         <outlet property="navItem" destination="4LE-jS-4YJ" id="giR-13-yZT"/>
