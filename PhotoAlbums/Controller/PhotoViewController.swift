@@ -76,8 +76,12 @@ class PhotoViewController: UIViewController {
 
     @IBAction func saveImageToPhotoLibrary(_ sender: Any) {
         guard let image = photoImageView.image else {return}
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage), nil)
+        let alertController = UIAlertController(title: "Do you want to save this image?", message: "This image will be saved to your photo library", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.saveImage), nil)
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true)
     }
     
 }
-
