@@ -39,6 +39,7 @@ class PhotoViewController: UIViewController {
         self.photoImageView.loadImageFromString(urlString: photo.url) {
             self.activityIndicator.stopAnimating()
             self.photoTitle.text = "'\(photo.title)'"
+            self.photoTitle.isHidden = false
         }
     }
     
