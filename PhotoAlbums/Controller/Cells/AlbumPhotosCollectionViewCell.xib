@@ -42,7 +42,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="50" height="73"/>
             <connections>
-                <outlet property="photoImageView" destination="m3n-bc-8w1" id="BJu-yZ-Xct"/>
+                <outlet property="photoImageView" destination="m3n-bc-8w1" id="HHk-KC-CxD"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="145.64732142857142"/>
         </collectionViewCell>

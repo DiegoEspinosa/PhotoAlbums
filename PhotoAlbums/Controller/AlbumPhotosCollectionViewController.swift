@@ -13,6 +13,7 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     public var selectedAlbum : Album?
     private let navTitle = "Photo Album"
     private let reuseIdentifier = "AlbumPhotoCell"
+    private let dispatchGroup = DispatchGroup()
     
     private var photosArray : Array<Photo> = []
 
@@ -42,8 +43,11 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumPhotosCollectionViewCell
         let photo = photosArray[indexPath.row]
-        cell.photoImageView.downloadImage(from: photo.thumbnailUrl)
-        roundCellCorners(cell)
+        cell.photoImageView.loadImageFromString(urlString: photo.thumbnailUrl)
+        
+        //round cell corners
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         return cell
     }
 
@@ -65,16 +69,17 @@ class AlbumPhotosCollectionViewController: UICollectionViewController {
     
     // MARK: - Private Functions
     private func loadInAlbumPhotos() {
-        if let passedInAlbum = selectedAlbum  {
+        if let passedInAlbum = selectedAlbum {
             activityIndicator.startAnimating()
-            photosArray = passedInAlbum.albumPhotos
-            collectionView.reloadData()
+            dispatchGroup.enter()
+            DispatchQueue.main.async {
+                self.photosArray = passedInAlbum.albumPhotos
+                self.collectionView.reloadData()
+                self.dispatchGroup.leave()
+            }
+            dispatchGroup.notify(queue: .main, execute: {
+                self.activityIndicator.stopAnimating()
+            })
         }
     }
-    
-    private func roundCellCorners(_ cell: AlbumPhotosCollectionViewCell) {
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-    }
-
 }

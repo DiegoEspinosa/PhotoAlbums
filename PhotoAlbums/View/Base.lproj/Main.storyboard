@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="16"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="6uj-z2-W8U">
-                            <rect key="frame" x="0.0" y="-96" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <cells>
@@ -112,48 +112,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-33-Z7r">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-Oe-UZj">
+                                <rect key="frame" x="16" y="491.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-gA-iYK">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="HdZ-4H-res"/>
+                                    <constraint firstAttribute="width" constant="300" id="uUq-xl-m6V"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cJE-rx-3a9" appends="YES" id="9Jp-0g-Pd5"/>
+                                </connections>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-lv-d5c">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-Ip-tve">
-                                <rect key="frame" x="37" y="125" width="300" height="300"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-gA-iYK">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="HdZ-4H-res"/>
-                                            <constraint firstAttribute="width" constant="300" id="uUq-xl-m6V"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="cJE-rx-3a9" appends="YES" id="9Jp-0g-Pd5"/>
-                                        </connections>
-                                    </imageView>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-Oe-UZj">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qTr-Ip-tve" firstAttribute="centerY" secondItem="IXz-Hm-hGY" secondAttribute="centerY" id="3rN-5t-EVp"/>
-                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerX" secondItem="IXz-Hm-hGY" secondAttribute="centerX" id="9l4-01-FTz"/>
-                            <constraint firstItem="qTr-Ip-tve" firstAttribute="centerX" secondItem="IXz-Hm-hGY" secondAttribute="centerX" id="DRk-x1-GVa"/>
-                            <constraint firstItem="bkT-33-Z7r" firstAttribute="centerY" secondItem="IXz-Hm-hGY" secondAttribute="centerY" id="EVO-PV-3A7"/>
-                            <constraint firstItem="bkT-33-Z7r" firstAttribute="centerX" secondItem="IXz-Hm-hGY" secondAttribute="centerX" id="ISQ-qU-XMO"/>
+                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerY" secondItem="TAg-wH-KEG" secondAttribute="centerY" id="FkL-Os-R7W"/>
+                            <constraint firstItem="iHf-Oe-UZj" firstAttribute="leading" secondItem="TAg-wH-KEG" secondAttribute="leadingMargin" id="LZg-X3-fxU"/>
+                            <constraint firstItem="oFb-gA-iYK" firstAttribute="centerX" secondItem="TAg-wH-KEG" secondAttribute="centerX" id="Z9g-he-OcT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iHf-Oe-UZj" secondAttribute="trailing" id="eZ0-TF-cGo"/>
+                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerY" secondItem="TAg-wH-KEG" secondAttribute="centerY" id="oUZ-lA-OX4"/>
+                            <constraint firstItem="Z9Y-lv-d5c" firstAttribute="centerX" secondItem="TAg-wH-KEG" secondAttribute="centerX" id="tKE-O7-Ocg"/>
+                            <constraint firstItem="iHf-Oe-UZj" firstAttribute="top" secondItem="oFb-gA-iYK" secondAttribute="bottom" constant="8" id="uVj-4h-suv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IXz-Hm-hGY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4LE-jS-4YJ"/>
+                    <navigationItem key="navigationItem" id="4LE-jS-4YJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="UTf-jh-XdD">
+                            <connections>
+                                <action selector="saveImageToPhotoLibrary:" destination="7kf-OT-QWG" id="g73-Gp-Geq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="bkT-33-Z7r" id="KBw-pV-sE1"/>
+                        <outlet property="activityIndicator" destination="Z9Y-lv-d5c" id="rqd-5Y-1sY"/>
                         <outlet property="navItem" destination="4LE-jS-4YJ" id="giR-13-yZT"/>
-                        <outlet property="photoImageView" destination="oFb-gA-iYK" id="Rzy-dH-LtU"/>
+                        <outlet property="photoImageView" destination="oFb-gA-iYK" id="cR0-Rb-HUc"/>
                         <outlet property="photoTitle" destination="iHf-Oe-UZj" id="sjm-ea-F2O"/>
                     </connections>
                 </viewController>

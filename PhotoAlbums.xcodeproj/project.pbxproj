@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04A5D1BD3107CDC8D2BD3447 /* Pods_PhotoAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FB6102650B87616E43696 /* Pods_PhotoAlbums.framework */; };
+		C541329823492ECF00D64EEF /* UIImageView+loadImageFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C541329723492ECF00D64EEF /* UIImageView+loadImageFromString.swift */; };
 		C578D4372343F996007C64CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D4362343F996007C64CA /* AppDelegate.swift */; };
 		C578D4392343F996007C64CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D4382343F996007C64CA /* SceneDelegate.swift */; };
 		C578D43B2343F996007C64CA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D43A2343F996007C64CA /* PhotoViewController.swift */; };
@@ -21,7 +22,6 @@
 		C578D45923450D37007C64CA /* PhotoAlbumsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D45823450D37007C64CA /* PhotoAlbumsCollectionViewController.swift */; };
 		C578D46323452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D46123452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift */; };
 		C578D46423452D82007C64CA /* PhotoAlbumsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C578D46223452D82007C64CA /* PhotoAlbumsCollectionViewCell.xib */; };
-		C578D466234530D9007C64CA /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */; };
 		C578D46823453F42007C64CA /* AlbumPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D46723453F42007C64CA /* AlbumPhotosCollectionViewController.swift */; };
 		C578D46B234544F8007C64CA /* AlbumPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578D469234544F8007C64CA /* AlbumPhotosCollectionViewCell.swift */; };
 		C578D46C234544F8007C64CA /* AlbumPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C578D46A234544F8007C64CA /* AlbumPhotosCollectionViewCell.xib */; };
@@ -31,6 +31,7 @@
 		3A6215E5FB5141B6A3CB2AE8 /* Pods-PhotoAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoAlbums.release.xcconfig"; path = "Target Support Files/Pods-PhotoAlbums/Pods-PhotoAlbums.release.xcconfig"; sourceTree = "<group>"; };
 		757FB6102650B87616E43696 /* Pods_PhotoAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75E885B4224EC984FB683C9 /* Pods-PhotoAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoAlbums.debug.xcconfig"; path = "Target Support Files/Pods-PhotoAlbums/Pods-PhotoAlbums.debug.xcconfig"; sourceTree = "<group>"; };
+		C541329723492ECF00D64EEF /* UIImageView+loadImageFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImageFromString.swift"; sourceTree = "<group>"; };
 		C578D4332343F996007C64CA /* PhotoAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C578D4362343F996007C64CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C578D4382343F996007C64CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		C578D45823450D37007C64CA /* PhotoAlbumsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsCollectionViewController.swift; sourceTree = "<group>"; };
 		C578D46123452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C578D46223452D82007C64CA /* PhotoAlbumsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoAlbumsCollectionViewCell.xib; sourceTree = "<group>"; };
-		C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		C578D46723453F42007C64CA /* AlbumPhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		C578D469234544F8007C64CA /* AlbumPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		C578D46A234544F8007C64CA /* AlbumPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -81,6 +81,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C54132942348EB9600D64EEF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C541329723492ECF00D64EEF /* UIImageView+loadImageFromString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C578D42A2343F996007C64CA = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +114,7 @@
 				C578D44B2343FA1E007C64CA /* View */,
 				C578D44C2343FA2D007C64CA /* Controller */,
 				C578D44D2343FA35007C64CA /* Services */,
+				C54132942348EB9600D64EEF /* Extensions */,
 				C578D44E2343FA3D007C64CA /* Supporting Files */,
 			);
 			path = PhotoAlbums;
@@ -117,7 +126,6 @@
 				C578D4542344F10D007C64CA /* Album.swift */,
 				C578D4562344F1DC007C64CA /* Photo.swift */,
 				C578D4532344F0A7007C64CA /* JSON */,
-				C578D465234530D9007C64CA /* UIImageView+DownloadImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,12 +316,12 @@
 				C578D43B2343F996007C64CA /* PhotoViewController.swift in Sources */,
 				C578D4372343F996007C64CA /* AppDelegate.swift in Sources */,
 				C578D4502344EB8E007C64CA /* PhotoAlbumSingleton.swift in Sources */,
-				C578D466234530D9007C64CA /* UIImageView+DownloadImage.swift in Sources */,
 				C578D4522344F09E007C64CA /* PhotoJson.swift in Sources */,
 				C578D46323452D82007C64CA /* PhotoAlbumsCollectionViewCell.swift in Sources */,
 				C578D46B234544F8007C64CA /* AlbumPhotosCollectionViewCell.swift in Sources */,
 				C578D46823453F42007C64CA /* AlbumPhotosCollectionViewController.swift in Sources */,
 				C578D45923450D37007C64CA /* PhotoAlbumsCollectionViewController.swift in Sources */,
+				C541329823492ECF00D64EEF /* UIImageView+loadImageFromString.swift in Sources */,
 				C578D4392343F996007C64CA /* SceneDelegate.swift in Sources */,
 				C578D4552344F10D007C64CA /* Album.swift in Sources */,
 			);

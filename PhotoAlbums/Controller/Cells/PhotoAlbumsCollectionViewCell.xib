@@ -41,7 +41,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="albumImageView" destination="XEU-6m-H9A" id="AZa-eI-QST"/>
+                <outlet property="albumImageView" destination="XEU-6m-H9A" id="IOk-X2-YKG"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="153.34821428571428"/>
         </collectionViewCell>

@@ -41,8 +41,11 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoAlbumsCollectionViewCell
         let album = photoAlbums[indexPath.row]
-        cell.albumImageView.downloadImage(from: album.albumPhotos[0].thumbnailUrl)
-        roundCellCorners(cell)
+        cell.albumImageView.loadImageFromString(urlString: album.albumPhotos[0].thumbnailUrl)
+        
+        //round cell corners
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         return cell
     }
 
@@ -86,10 +89,5 @@ class PhotoAlbumsCollectionViewController: UICollectionViewController {
         alert.addAction(retryAction)
         self.present(alert, animated: true, completion: nil)
         activityIndicator.stopAnimating()
-    }
-    
-    private func roundCellCorners(_ cell: PhotoAlbumsCollectionViewCell) {
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
     }
 }
