@@ -36,11 +36,23 @@ class PhotoViewController: UIViewController {
     private func loadInPhoto() {
         activityIndicator.startAnimating()
         guard let photo = selectedPhoto else {fatalError("Error setting photo")}
-        self.photoImageView.loadImageFromString(urlString: photo.url) {
-            self.activityIndicator.stopAnimating()
-            self.photoTitle.text = "'\(photo.title)'"
-            self.photoTitle.isHidden = false        //photoTitle is hidden by default
+        self.photoImageView.loadImageFromString(urlString: photo.url) { error in
+            if error != nil {
+                self.displayAlert()
+            } else {
+                self.photoTitle.text = "'\(photo.title)'"
+                self.photoTitle.isHidden = false        //photoTitle is hidden by default
+                self.activityIndicator.stopAnimating()
+            }
         }
+    }
+    
+    private func displayAlert() {
+        let alert = UIAlertController(title: "Something went wrong", message: "There was a problem retrieving data. Please try again", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+        activityIndicator.stopAnimating()
     }
     
     @objc private func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

@@ -38,17 +38,17 @@ extension UIImageView {
         }.resume()
     }
     
-    func loadImageFromString(urlString: String, completion: @escaping ()->Void){
+    func loadImageFromString(urlString: String, completion: @escaping (Error?)->Void){
         if let cacheImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             self.image = cacheImage
-            completion()
+            completion(nil)
         }
         guard let url = URL(string: urlString) else {return}
             
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
                 NSLog("Error: \(error)")
-                completion()
+                completion(error)
             }
             guard let data = data else {return}
             let image = UIImage(data: data)
@@ -56,7 +56,7 @@ extension UIImageView {
                 
             DispatchQueue.main.async {
                 self.image = image
-                completion()
+                completion(nil)
             }
         }.resume()
     }
