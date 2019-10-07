@@ -48,7 +48,7 @@ extension UIImageView {
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
                 NSLog("Error: \(error)")
-                return
+                completion()
             }
             guard let data = data else {return}
             let image = UIImage(data: data)

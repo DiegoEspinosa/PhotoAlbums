@@ -32,7 +32,7 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
                         let jsonDecoder = JSONDecoder()
                         let json = try jsonDecoder.decode([PhotoJson].self, from: jsonData)
                         let photoArray = self.createPhotosFromJson(from: json)
-                        let albums = self.createAlbumsFromPhotos(from: photoArray)
+                        let albums = self.createAlbumsFromAllPhotos(from: photoArray)
                         seal.fulfill(albums)
                     } catch {
                         seal.reject(error)
@@ -54,7 +54,7 @@ class PhotoAlbumSingleton: PhotoAlbumRepository {
         return allPhotos
     }
     
-    private func createAlbumsFromPhotos(from photoArray: [Photo]) -> [Album] {
+    private func createAlbumsFromAllPhotos(from photoArray: [Photo]) -> [Album] {
         var albums : Array<Album> = []
         var currentAlbumId = photoArray[0].albumId
         let maxNumAlbums = getNumberOfAlbumsFromAllPhotos(from: photoArray)
